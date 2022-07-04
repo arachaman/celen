@@ -1,0 +1,11 @@
+:root {
+    color: #f3af34;
+  }
+
+.btn{
+    background-color: #f3af34;
+}
+
+.btn:hover{
+    background-color: #ba892e;
+}

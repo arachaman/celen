@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- CSS only -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+  <link rel="stylesheet" href="dashboard.css" />
+  <title>Dashboard</title>
+</head>
+
+<body>
+
+  <!--table-->
+  <div class="container mt-5">
+    <div class="row">
+      <div class="col">
+        <h1 class="text-center mb-5">welcome,</h1>
+        <table class="table table-bordered table-striped table-hover">
+          <thead>
+            <tr>
+              <td scope="col">id</td>
+              <td scope="col">username</td>
+              <td scope="col">password</td>
+              <td scope="col">firstName</td>
+              <td scope="col">lastname</td>
+              <td scope="col">birthplace</td>
+              <td scope="col">action</td>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <% user.forEach(i => { %>
+              <tr>
+                <td><%= i.id %></td>
+                <td><%= i.username %></td>
+                <td><%= i.password %></td>
+                <td><%= i.user_game_biodatum.firstName %></td>
+                <td><%= i.user_game_biodatum.lastName %></td>
+                <td><%= i.user_game_biodatum.birthPlace %></td>
+                <td>
+                  <a href="/user/<%= i.id %>/update">update</a> ||
+                  <a href="/user/<%= i.id %>/delete">delete</a>
+              </tr>
+              </td>
+              <% }) %>
+          </tbody>
+        </table>
+        <!--end of table-->
+
+
+        <!-- Button trigger modal -->
+        <button type="button" class="btn adduser" data-bs-toggle="modal" data-bs-target="#addUser">
+          Add User
+        </button>
+        <!-- Button trigger modal -->
+
+        <!-- Modal create -->
+        <div class="modal fade" id="addUser" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog">
+            <form action="/user" method="post">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Add User</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Username</label>
+                    <input type="text" class="form-control" name="username" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <input type="password" class="form-control" name="password" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="firstName" class="form-label">First Name</label>
+                    <input type="text" class="form-control" name="firstName" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="lastName" class="form-label">Last Name</label>
+                    <input type="text" class="form-control" name="lastName" />
+                  </div>
+                  <div class="mb-3">
+                    <label for="birthPlace" class="form-label">Birth Place</label>
+                    <input type="text" class="form-control" name="birthPlace" />
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn" data-bs-dismiss="modal">
+                    Close
+                  </button>
+                  <button type="submit" class="btn">
+                    Add
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+        <!-- Modal create end -->
+      </div>
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous">
+  </script>
+</body>
+
+</html>

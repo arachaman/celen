@@ -4,49 +4,6 @@ let user = require("./user.json");
 const port = 3000;
 const fs = require("fs");
 
-// data.use(express.json()); ////middleware
-// /// get all
-// data.get("/user", (req, res) => {
-//   console.log(user);
-//   res.status(200).json(user);
-//   console.log(req.body)
-// });
-
-// ///create
-// data.post("/user", (req, res) => {
-//   let post = {
-//     id: user[user.length - 1].id + 1,
-//     email: req.body.title,
-//     pass: req.body.body,
-//   };
-//   user.push(post);
-//   res.status(201).json(user);
-// });
-
-// ///get  by id
-// data.get("/user/detail/:id", (req, res) => {
-//   let { id } = req.params;
-//   let post = user.find((e) => e.id == id);
-//   res.status(200).json(post);
-// });
-
-// ///update
-// data.put("/user/update/:id", (req, res) => {
-//   let { id } = req.params;
-//   let { email, pass } = req.body;
-//   let post = user.find((e) => e.id == id);
-//   post = { ...post, title, body };
-//   user = user.map((e) => (e.id == id ? post : e));
-//   res.status(200).json({ msg: "Data berhasil diubah", data: post });
-// });
-
-// ///delete
-// data.delete("/user/delete/:id", (req, res) => {
-//   let { id } = req.params;
-//   user = user.filter((e) => e.id != id);
-//   res.status(200).json({ msg: "Data berhasil dihapus", data: id });
-// });
-
 data.use(express.json())
 
 // console.log(user)

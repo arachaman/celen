@@ -1,44 +1,62 @@
-*{
-    padding: 0;
+* {
     margin: 0;
+    padding: 0;
+  }
+  
+body {
+    font-family: "Open Sans", sans-serif;
+    display: flex;
+    align-items: center;
+    }
+
+.background {
+    background-image: url(assets/main-bg.jpg);
+    background-repeat: none;
+    height: 100vh;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
     
 }
 
-body{
-    display: flex;
-    align-items: center;
-    padding-top: 40px;
-    padding-bottom: 40px;
-    background-color: rgb(235, 232, 232);
-    height: 100%;
+.navbar-rchmn {
+    background: rgba(0, 0, 0, 0.75);
+    font-size: 20px;
+    font-weight: 500;
 }
 
-.logo{
-    margin-bottom: 20px;
+.navbar-rchmn .navbar-brand {
+    font-weight: 700;
 }
 
-.signin{
-    width: 100%;
-    max-width: 330px;
-    padding: 15px;
-    margin: auto;
-    margin-top: 12rem;
-    border: 3px solid;
-    border-radius: 15px;
-    background-color: white;
+.navbar-rchmn a {
+    padding-left: 2rem;
 }
 
-input{
-    margin-bottom: 12px;
+.margin {
+    margin-left: 31rem;
+  }
+
+form{
+    margin: 30px;
+    
 }
 
-.loginbtn{
-    background-color: black;
-    color: white;
+.form{
+    margin-top: 6rem;
+    margin-left: 28rem;
+    margin-right: 28rem;
+    border: 2px solid;
+    border-radius: 30px;
+    background: rgba(3, 3, 3, 0.3);
+    padding-top: 28px;
+    padding-bottom: 28px;
 }
 
-.loginbtn:hover{
-    background-color: white;
-    color: black;
-    border: 1px solid;
+.button{
+    background-color: #f3af34;
+}
+
+.button:hover{
+    background-color: #d29729;
 }
